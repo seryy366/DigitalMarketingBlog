@@ -25,4 +25,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
 Route::resource('admin/categories',  \App\Http\Controllers\Admin\CategoryController::class);
 Route::resource('admin/tags',  \App\Http\Controllers\Admin\TagController::class);
+Route::resource('admin/posts',  \App\Http\Controllers\Admin\PostController::class);
+
 
