@@ -16,15 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware'=>'admin'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin.index');
+    Route::resource('/categories',  \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('/tags',  \App\Http\Controllers\Admin\TagController::class);
+    Route::resource('/posts',  \App\Http\Controllers\Admin\PostController::class);
 
 });
 
-Route::resource('admin/categories',  \App\Http\Controllers\Admin\CategoryController::class);
-Route::resource('admin/tags',  \App\Http\Controllers\Admin\TagController::class);
-Route::resource('admin/posts',  \App\Http\Controllers\Admin\PostController::class);
+Route::group(['middleware'=>'guest'], function(){
+    Route::get('/register', [\App\Http\Controllers\UserController::class, 'create'])->name('register.create');
+    Route::post('/register', [\App\Http\Controllers\UserController::class, 'store'])->name('register.store');
+    Route::get('/login', [\App\Http\Controllers\UserController::class, 'loginForm'])->name('login.create');
+    Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login');
+});
+
+Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout')->middleware('auth');
+//Route::get('/login', 'UserController@loginForm')->name('login.create');
+
 
 
