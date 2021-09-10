@@ -79,7 +79,7 @@
                                 @endif
                             </div>
                             <!-- /.card-body -->
-                            <div class="card-footer clearfix">
+                            <div class="">
                                 {{ $posts->links() }}
 {{--                                <ul class="pagination pagination-sm m-0 float-right">--}}
 {{--                                    <li class="page-item"><a class="page-link" href="#">«</a></li>--}}

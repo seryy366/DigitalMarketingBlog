@@ -154,7 +154,7 @@
                     <img src="{{ asset('assets/admin/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{ $user->name }}</a>
+{{--                    <a href="#" class="d-block">{{ $user->name }}</a>--}}
                 </div>
             </div>
 
@@ -259,7 +259,11 @@
                             </ul>
                         </div>
                     @endif
-
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     @if (session()->has('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -298,6 +302,9 @@
             $(this).closest('.has-treeview').addClass('menu-open');
         }
     });
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+    })
 </script>
 
 </body>
