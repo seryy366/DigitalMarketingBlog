@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Markedia - Marketing Blog Template</title>
+<title>@yield('title')</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -190,7 +190,7 @@
         </div><!-- end container -->
     </footer><!-- end footer -->
 
-    <div class="dmtop">Scroll to Top</div>
+    <div class="dmtop"></div>
 
 </div><!-- end wrapper -->
 

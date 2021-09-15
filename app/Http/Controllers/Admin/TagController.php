@@ -99,7 +99,9 @@ class TagController extends Controller
 
 
         $tag = Tag::find($id);
-        if($tag->posts->count()) return redirect()->route('tag.index')->with('error','Ошибка! У тегов есть запеси.');
+        if($tag->posts->count()) {
+            return redirect()->route('tag.index')->with('error', 'Ошибка! У тегов есть запеси.');
+        }
         $tag->delete();
         return redirect()->route('tags.index')->with('success','Тег удален');
     }

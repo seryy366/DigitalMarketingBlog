@@ -12590,7 +12590,7 @@ hr.invis3 {
 **************************************/
 
 
-/* RESPONSIVE 
+/* RESPONSIVE
 **************************************/
 
 @media (max-width: 1156px) {
@@ -12788,7 +12788,7 @@ hr.invis3 {
 **************************************/
 
 
-/* COLORS 
+/* COLORS
 **************************************/
 
 .authorbox p a,
@@ -12834,7 +12834,7 @@ a:focus,
 }
 
 
-/* OTHER COLORS 
+/* OTHER COLORS
 **************************************/
 
 .navbar-nav .nav-link.active.color-pink-hover,
@@ -13317,4 +13317,9 @@ a:focus,
 .bg-inverse {
     color: #111111 !important;
     background-color: #f9ca27 !important;
+
+
+}
+.hidden {
+    display: none;
 }
