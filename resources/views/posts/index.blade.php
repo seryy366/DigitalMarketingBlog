@@ -51,7 +51,7 @@
                     </div><!-- end post-sharing -->
                     <h4><a href="{{route('article.show', ['slug'=> $post->slug])}}" title="">{{$post->title}}</a></h4>
                     {!! $post->description !!}
-                    <small><a href="{{route('category.single', ['slug'=>$post->category->slug])}}" title="">{{$post->category->title}}</a></small>
+                    <small><a href="{{route('categories.single', ['slug'=>$post->category->slug])}}" title="">{{$post->category->title}}</a></small>
                     <small>{{$post->getPostDate()}}</small>
                     <small><i class="fa fa-eye"></i> {{$post->views}}</small>
                 </div><!-- end meta -->
@@ -70,14 +70,7 @@
     <div class="col-md-12">
         <nav aria-label="Page navigation">
             {{$posts->links()}}
-{{--            <ul class="pagination justify-content-center">--}}
-{{--                <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
-{{--                <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
-{{--                <li class="page-item"><a class="page-link" href="#">3</a></li>--}}
-{{--                <li class="page-item">--}}
-{{--                    <a class="page-link" href="#">Next</a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
+
         </nav>
     </div><!-- end col -->
 </div><!-- end row -->
