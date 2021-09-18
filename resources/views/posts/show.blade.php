@@ -36,7 +36,7 @@
         <div class="blog-title-area">
             <div class="tag-cloud-single">
                 @foreach($post->tags as $tag)
-                    <a href="#" class=""><span>{{$tag->title}}</span></a>
+                    <a href="{{route('tags.single', ['slug' => $tag->slug])}}" class=""><span>{{$tag->title}}</span></a>
                 @endforeach
 
             </div><!-- end meta -->

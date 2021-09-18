@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\PostContruller::class, 'index'])->name('home');
 Route::get('/article/{slug}', [\App\Http\Controllers\PostContruller::class, 'show'])->name('article.show');
 Route::get('/categories/{slug}',[\App\Http\Controllers\CategoryController::class, 'show'])->name('categories.single');
-
+Route::get('/tags/{slug}',[\App\Http\Controllers\TagController::class, 'show'])->name('tags.single');
 
 Route::group(['prefix' => 'admin', 'middleware'=>'admin'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin.index');

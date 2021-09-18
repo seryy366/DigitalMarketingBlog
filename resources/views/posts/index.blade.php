@@ -51,6 +51,7 @@
                     </div><!-- end post-sharing -->
                     <h4><a href="{{route('article.show', ['slug'=> $post->slug])}}" title="">{{$post->title}}</a></h4>
                     {!! $post->description !!}
+                    <br class="">
                     <small><a href="{{route('categories.single', ['slug'=>$post->category->slug])}}" title="">{{$post->category->title}}</a></small>
                     <small>{{$post->getPostDate()}}</small>
                     <small><i class="fa fa-eye"></i> {{$post->views}}</small>

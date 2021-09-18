@@ -51,11 +51,11 @@
                                                     <td>{{ $category->title }}</td>
                                                     <td>{{ $category->slug }}</td>
                                                     <td>
-                                                        <a href="{{ route('categories.edit', ['categories' => $category->id]) }}" class="btn btn-info btn-sm float-left mr-1">
+                                                        <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-info btn-sm float-left mr-1">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
 
-                                                        <form action="{{ route('categories.destroy', ['categories' => $category->id]) }}" method="post" class="float-left">
+                                                        <form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="post" class="float-left">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-sm"

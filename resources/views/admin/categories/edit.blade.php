@@ -29,7 +29,7 @@
                         </div>
                         <!-- /.card-header -->
 
-                        <form role="form" method="post" action="{{ route('categories.update', ['categories' => $category->id]) }}">
+                        <form role="form" method="post" action="{{ route('categories.update', ['category' => $category->id]) }}">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
