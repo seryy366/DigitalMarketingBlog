@@ -34,12 +34,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}">Home</a>
                         </li>
+                        @foreach($categories_list as $category)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories.single', ['slug' => 'marketing']) }}">Marketing</a>
+                            <a class="nav-link" href="{{ route('categories.single', ['slug' => $category->slug]) }}">{{$category->title}}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories.single', ['slug' => 'make-money']) }}">Make Money</a>
-                        </li>
+                        @endforeach
                     </ul>
                     <form class="form-inline">
                         <input class="form-control mr-sm-2" type="text" placeholder="How may I help?">
