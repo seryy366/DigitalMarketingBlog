@@ -18,6 +18,7 @@ Route::get('/', [\App\Http\Controllers\PostContruller::class, 'index'])->name('h
 Route::get('/article/{slug}', [\App\Http\Controllers\PostContruller::class, 'show'])->name('article.show');
 Route::get('/categories/{slug}',[\App\Http\Controllers\CategoryController::class, 'show'])->name('categories.single');
 Route::get('/tags/{slug}',[\App\Http\Controllers\TagController::class, 'show'])->name('tags.single');
+Route::get('/search', [\App\Http\Controllers\SearchController::class, 'show'])->name('search.show');
 
 Route::group(['prefix' => 'admin', 'middleware'=>'admin'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\MainController::class, 'index'])->name('admin.index');
